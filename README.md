@@ -72,15 +72,13 @@
 
 #### 직접 만든 도구
 
-| | |
-|---|---|
-| **SCG Dev** | 폰의 슬랙만으로 기획, 리소스, 개발을 끝까지 미는 게임 제작 앱. Electron · TypeScript |
-| **SCG Sheets** | 유니티와 AI 가 토큰 없이 구글 시트를 다루게 하는 로컬 REST API 앱 |
-| **SCG Sound** | 원하는 소리를 말하면 이 맥에서 효과음을 생성하는 앱. Stable Audio 3 · MLX |
-| **SCG Dashboard** | 출시한 게임의 GA4 지표를 매일 모아 보여주는 대시보드. Cloudflare Workers |
-| **SCG PM** | 여러 레포의 할 일을 칸반으로 AI 에게 나눠 맡기는 앱 |
-| **CLOUDIE** | 어제 한 일을 정리하고 오늘 할 일을 골라 주는 데스크톱 구름 |
-| **AI-SKILLS** | 결정은 먼저 잠그고 완료는 증거로 판정하는 Claude Code · Codex 스킬 14개 |
+- **SCG Dev** 폰의 슬랙만으로 기획, 리소스, 개발을 끝까지 미는 게임 제작 앱. Electron · TypeScript
+- **SCG Sheets** 유니티와 AI 가 토큰 없이 구글 시트를 다루게 하는 로컬 REST API 앱
+- **SCG Sound** 원하는 소리를 말하면 이 맥에서 효과음을 생성하는 앱. Stable Audio 3 · MLX
+- **SCG Dashboard** 출시한 게임의 GA4 지표를 매일 모아 보여주는 대시보드. Cloudflare Workers
+- **SCG PM** 여러 레포의 할 일을 칸반으로 AI 에게 나눠 맡기는 앱
+- **CLOUDIE** 어제 한 일을 정리하고 오늘 할 일을 골라 주는 데스크톱 구름
+- **AI-SKILLS** 결정은 먼저 잠그고 완료는 증거로 판정하는 Claude Code · Codex 스킬 14개
 
 Jenkins 잡 5개로 `Android 빌드` · `iOS 빌드` · `인앱 상품 등록` · `스토어 등록정보` · `GA4 파라미터 등록`을 배포합니다. 전부 비공개 저장소라 실제 화면은 [포트폴리오](https://sungwoonie.github.io/Portfolio_Page/)에 있습니다.
 

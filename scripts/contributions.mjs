@@ -73,7 +73,8 @@ function render(t) {
   });
   const dayLabels = [['Mon', 1], ['Wed', 3], ['Fri', 5]]
     .map(([n, r]) => `<text x="0" y="${TOP + r * STEP + 9}" font-size="10" fill="${t.muted}">${n}</text>`).join('');
-  const lx = W - 4 - 5 * STEP - 34, ly = H - 16;
+  // 범례 폭: Less(30) + 칸 다섯 + 여백 4 + More(28)
+  const lx = W - 4 - (30 + 5 * STEP + 4 + 28), ly = H - 16;
   const legend = [0, 1, 2, 3, 4].map((lv, i) => {
     const fill = lv ? `fill="${t.fill}" fill-opacity="${t.op[lv]}"` : `fill="${t.empty}"`;
     return `<rect x="${lx + 30 + i * STEP}" y="${ly}" width="${CELL}" height="${CELL}" rx="2" ${fill}/>`;
@@ -82,7 +83,7 @@ function render(t) {
 <text x="0" y="16" font-size="14" font-weight="600" fill="${t.text}">${total.toLocaleString('en-US')} contributions in the last year</text>
 <text x="${W - 4}" y="16" font-size="11" fill="${t.muted}" text-anchor="end">sungwoonie + StarCloudgames-Official</text>
 ${months}${dayLabels}${cells}
-<text x="${lx}" y="${ly + 9}" font-size="10" fill="${t.muted}">Less</text>${legend}<text x="${lx + 30 + 5 * STEP + 2}" y="${ly + 9}" font-size="10" fill="${t.muted}">More</text>
+<text x="${lx}" y="${ly + 9}" font-size="10" fill="${t.muted}">Less</text>${legend}<text x="${lx + 30 + 5 * STEP + 4}" y="${ly + 9}" font-size="10" fill="${t.muted}">More</text>
 </svg>
 `;
 }
