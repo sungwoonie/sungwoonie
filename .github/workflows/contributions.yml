@@ -1,0 +1,25 @@
+name: 잔디 갱신
+on:
+  schedule:
+    - cron: '17 15 * * *' # 매일 00:17 KST
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 두 계정 잔디 합쳐 그리기
+        run: node scripts/contributions.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 바뀌었으면 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/contributions-dark.svg assets/contributions-light.svg
+          git diff --cached --quiet || (git commit -m "잔디 갱신" && git push)
